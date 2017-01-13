@@ -2,11 +2,17 @@
   <h1>Hot Blogs</h1>
 
   <ul>
-    {{#each model as |blog|}}
+    {{#each model.blogs as |blog|}}
        {{blog-tile blog=blog update="update" destroyBlog="destroyBlog"}}
     {{/each}}
   </ul>
-
   {{new-blog saveBlog2="saveBlog3"}}
-
+  <hr>
+  <h1>Comments</h1>
+  <ul>
+  {{#each model.comments as |comment|}}
+    <li>{{comment.comment}} by {{comment.user}}</li>
+  {{/each}}
+</ul>
+{{new-comment}}
 </div>
