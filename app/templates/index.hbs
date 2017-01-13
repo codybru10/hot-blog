@@ -1,7 +1,12 @@
-<h1>Home</h1>
+<div class="container">
+  <h1>Hot Blogs</h1>
 
-<ul>
-  {{#each model as |blog|}}
-     <li>{{blog.title}}{{blog.author}}{{blog.text}}</li>
-  {{/each}}
-</ul>
+  <ul>
+    {{#each model as |blog|}}
+       {{blog-tile blog=blog update="update" destroyBlog="destroyBlog"}}
+    {{/each}}
+  </ul>
+
+  {{new-blog saveBlog2="saveBlog3"}}
+
+</div>

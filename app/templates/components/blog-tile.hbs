@@ -1,0 +1,15 @@
+
+<div class="well">
+  <h3>{{blog.title}}</h3>
+  <h5>{{blog.author}}</h5>
+  <p><img class="blog-photo" src={{blog.image}} alt="A photo" ></p>
+  <br>
+  {{#if isTextShowing }}
+    <p>{{blog.text}}</p>
+    <button {{action 'textHide'}}>Collapse</button>
+  {{else}}
+    <button {{action 'textShow'}}>Read Blog</button>
+  {{/if}}
+  {{update-blog blog=blog update="update"}}
+  <button {{action 'delete' blog}}>Delete Blog</button>
+</div>
